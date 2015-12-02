@@ -3,29 +3,17 @@ using System.Collections;
 
 public class Controller : MonoBehaviour {
 
-	public float speed;
+public float Speed = 0f;
+private float movex = 0f;
+private float movey = 0f;
 
-	void Start () {
-	
-	}
-	
-	void Update () {
-		
-	}
+void Start () {
+}
 
-	void Controls(){
-		if (input.GetKey(KeyCode.ArrowUp)){
-			//transform.position = 
-		}
-		if (input.GetKey(KeyCode.ArrowDown)){
-
-		}
-		if (input.GetKey(KeyCode.ArrowLeft)){
-
-		}
-		if (input.GetKey(KeyCode.ArrowRight)){
-
-		}
-	}
+void FixedUpdate () {
+	movex = Input.GetAxis ("Horizontal");
+	movey = Input.GetAxis ("Vertical");
+	GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+}
 
 }
