@@ -3,13 +3,15 @@ using System.Collections;
 
 public class Door : MonoBehaviour {
 
-	// Use this for initialization
+	public GameObject door;
+
 	void Start () {
-	
+		door.SetActive(true);
 	}
 	
-	// Update is called once per frame
 	void Update () {
-	
+		if (EnemyManager.enemies == 0){
+			door.SetActive(false);
+		}
 	}
 }

@@ -3,12 +3,12 @@ using System.Collections;
 
 public class EnemyManager : MonoBehaviour {
 
-	// Use this for initialization
+	static public int enemies;
+
 	void Start () {
-	
+		//enemies = 0;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}

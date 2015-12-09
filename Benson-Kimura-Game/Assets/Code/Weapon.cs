@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D enemy) {
 		if (enemy.CompareTag("Enemy")){
 			Destroy(enemy.gameObject);
+			EnemyManager.enemies--;
 		}
 	}
 }
