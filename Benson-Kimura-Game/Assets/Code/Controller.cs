@@ -30,28 +30,16 @@ public class Controller : MonoBehaviour {
 
 		//find direction
 		if (Input.GetKey(KeyCode.UpArrow)){
-			faceUp = true;
-			faceDown = false;
-			faceLeft = false;
-			faceRight = false;
+			UP();
 		}
 		if (Input.GetKey(KeyCode.DownArrow)){
-			faceUp = false;
-			faceDown = true;
-			faceLeft = false;
-			faceRight = false;
+			DOWN();
 		}
 		if (Input.GetKey(KeyCode.LeftArrow)){
-			faceUp = false;
-			faceDown = false;
-			faceLeft = true;
-			faceRight = false;
+			LEFT();
 		}
 		if (Input.GetKey(KeyCode.RightArrow)){
-			faceUp = false;
-			faceDown = false;
-			faceLeft = false;
-			faceRight = true;
+			RIGHT();
 		}
 
 		//set weapon orientation
@@ -75,6 +63,36 @@ public class Controller : MonoBehaviour {
 				canSwing = false;	
 			}
 	}
+
+	void UP(){
+		faceUp = true;
+		faceDown = false;
+		faceLeft = false;
+		faceRight = false;
+	}
+
+	void DOWN(){
+		faceUp = false;
+		faceDown = true;
+		faceLeft = false;
+		faceRight = false;
+	}
+
+	void LEFT(){
+		faceUp = false;
+		faceDown = false;
+		faceLeft = true;
+		faceRight = false;
+	}
+
+	void RIGHT(){
+		faceUp = false;
+		faceDown = false;
+		faceLeft = false;
+		faceRight = true;
+	}
+
+
 
 	void Swing (){
 		wpn.SetActive(true);
