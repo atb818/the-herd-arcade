@@ -23,22 +23,24 @@ public class Controller : MonoBehaviour {
 		wR.SetActive(false);
 	}
 
-	void FixedUpdate () {
-		movex = Input.GetAxis ("Horizontal");
-		movey = Input.GetAxis ("Vertical");
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+	void Update () {
+
+
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (Input.GetAxis("Horizontal") * Speed, Input.GetAxis("Vertical") * Speed);
+
+		/*
 
 		//find direction
-		if (Input.GetKey(KeyCode.UpArrow)){
+		if (Input.GetAxis("Vertical") > 0){
 			UP();
 		}
-		if (Input.GetKey(KeyCode.DownArrow)){
+		if (Input.GetAxis("Vertical") < 0){
 			DOWN();
 		}
-		if (Input.GetKey(KeyCode.LeftArrow)){
+		if (Input.GetAxis("Horizontal") < 0){
 			LEFT();
 		}
-		if (Input.GetKey(KeyCode.RightArrow)){
+		if (Input.GetAxis("Horizontal") > 0){
 			RIGHT();
 		}
 
@@ -62,30 +64,50 @@ public class Controller : MonoBehaviour {
 				StartCoroutine("SwingTime");
 				canSwing = false;	
 			}
+
+*/
 	}
 
-	void UP(){
+	public void UP(){
+		movex = Input.GetAxis ("Horizontal");
+		movey = Input.GetAxis ("Vertical");
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+
 		faceUp = true;
 		faceDown = false;
 		faceLeft = false;
 		faceRight = false;
 	}
 
-	void DOWN(){
+	public void DOWN(){
+		movex = Input.GetAxis ("Horizontal");
+		movey = Input.GetAxis ("Vertical");
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+
 		faceUp = false;
 		faceDown = true;
 		faceLeft = false;
 		faceRight = false;
 	}
 
-	void LEFT(){
+	public void LEFT(){
+		movex = -1;
+		movey = 0;
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+
 		faceUp = false;
 		faceDown = false;
 		faceLeft = true;
 		faceRight = false;
+
+		Debug.Log ("WORKING");
 	}
 
-	void RIGHT(){
+	public void RIGHT(){
+		movex = Input.GetAxis ("Horizontal");
+		movey = Input.GetAxis ("Vertical");
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+
 		faceUp = false;
 		faceDown = false;
 		faceLeft = false;
