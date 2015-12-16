@@ -45,10 +45,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CameraFollow.cs" />
      <Compile Include="Assets\Code\Controller.cs" />
      <Compile Include="Assets\Code\Door.cs" />
      <Compile Include="Assets\Code\Enemies.cs" />
      <Compile Include="Assets\Code\EnemyManager.cs" />
+     <Compile Include="Assets\Code\Projectile.cs" />
      <Compile Include="Assets\Code\Weapon.cs" />
      <Compile Include="Assets\PlayerMove.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

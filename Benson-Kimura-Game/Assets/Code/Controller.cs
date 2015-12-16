@@ -69,9 +69,7 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void UP(){
-		movex = Input.GetAxis ("Horizontal");
-		movey = Input.GetAxis ("Vertical");
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+	
 
 		faceUp = true;
 		faceDown = false;
@@ -80,9 +78,6 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void DOWN(){
-		movex = Input.GetAxis ("Horizontal");
-		movey = Input.GetAxis ("Vertical");
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
 
 		faceUp = false;
 		faceDown = true;
@@ -91,10 +86,7 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void LEFT(){
-		movex = -1;
-		movey = 0;
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
-
+	
 		faceUp = false;
 		faceDown = false;
 		faceLeft = true;
@@ -104,9 +96,7 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void RIGHT(){
-		movex = Input.GetAxis ("Horizontal");
-		movey = Input.GetAxis ("Vertical");
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (movex * Speed, movey * Speed);
+
 
 		faceUp = false;
 		faceDown = false;
